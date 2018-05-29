@@ -6,7 +6,7 @@ const APP_ID = '';
 
 const SKILL_NAME      = 'MorseCodeMirror';
 const WELCOME_MESSAGE = 'Hello! Welcome to morse code mirror. Your guide to updates, road maps and how-to\'s on the morse code mirror project. How may I help you?';
-const ABOUT_MESSAGE   = '';
+const ABOUT_MESSAGE   = 'The morse code mirror is a smart mirror project developed by Brandon Morse, in an attempt to make a smart mirror that is more practical for every day use rather than just a neat thing to have.';
 const HELP_MESSAGE    = '';
 const HELP_REPROMPT   = 'What can I help you with?';
 const STOP_MESSAGE    = 'Be well!';

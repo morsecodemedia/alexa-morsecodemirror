@@ -26,16 +26,16 @@ const data = {
   'features': [
     {
       'title'       : 'Screensaver',
-      'description' : '',
+      'description' : 'This screensaver module is a Vue component meant for the morse code mirror smart mirror project.',
       'status'      : 'completed',
-      'repository'  : '',
-      'blog'        : ''
+      'repository'  : 'https://github.com/morsecodemedia/morsecodemirror-screensaver',
+      'blog'        : 'https://blog.morsecodemedia.com/smart-mirror-the-screensaver/'
     },
     {
       'title'       : 'Time Travel',
-      'description' : '',
+      'description' : 'This Google Maps directions/time to travel module is a Vue component meant for the morse code mirror smart mirror project.',
       'status'      : 'in development',
-      'repository'  : '',
+      'repository'  : 'https://github.com/morsecodemedia/morsecodemirror-timetravel',
       'blog'        : ''
     },
     {
@@ -105,3 +105,37 @@ exports.handler = (event, context) => {
   alexa.registerHandlers(handlers);
   alexa.execute();
 };
+
+function getFeatures() {
+  let features = [];
+  Object.keys(data.features).forEach(key => {
+    features.push(data.features[key].title);
+  });
+  return features;
+}
+
+function getFeatureByTitle(featureTitle) {
+  if (!featureTitle) {
+    return false;
+  }
+  let feature = [];
+  for (let i = 0; i < data.features.length; i++) {
+    if (data.features[i].title.search(featureTitle) > -1) {
+      story.push(data.features[i]);
+    }
+  }
+  return feature;
+}
+
+function getFeatureByStatus(featureStatus) {
+  if (!featureStatus) {
+    return false;
+  }
+  let features = [];
+  for (let i = 0; i < data.features.length; i++) {
+    if (data.features[i].status.search(featureStatus) > -1) {
+      story.push(data.features[i]);
+    }
+  }
+  return features;
+}
